@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyText
+  total_revenue: 
+  total_payment: 
+
+two:
+  id: MyText
+  total_revenue: 
+  total_payment: 
