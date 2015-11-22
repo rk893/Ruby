@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Additional
+
+// Additional for Service
+//= require welcome

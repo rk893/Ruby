@@ -47,3 +47,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Cassandara
 gem 'cequel'
+
+# TypeScript
+gem 'typescript-rails', '~> 0.5.0'
+
+# AutoNumeric
+gem 'autonumeric-rails'

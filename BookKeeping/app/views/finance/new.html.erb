@@ -1,8 +1,52 @@
 <h1>New Book Keeping</h1>
 
-<%= form_for :finance, url: finance_path do |f| %>
-    
+<%= form_for :finance, url: finance_index_path do |f| %>
+    <% if @finance.errors.any? %>
+        <div id="error_explain">
+            <h3><%= pluralize(@finance.errors.count, "error") %> prohibited this finance from being saved: </h3>
+            <ul>
+                <%= @finance.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <table>
+        <tr>
+            <td><%= f.label :id %></td>
+            <td>
+                <%= f.select :year,
+                    {'2015年' => 2015, '2016年' => 2016, '2017年' => 2017},
+                    {include_blank: '選択してください'}, class: 'html-class' %>
+                <%= f.select :month,
+                    {'01月' => 1, '02月' => 2, '03月' => 3, '04月' => 4, '05月' => 5, '06月' => 6,
+                     '07月' => 7, '08月' => 8, '09月' => 9, '10月' => 10, '11月' => 11, '12月' => 12},
+                    {include_blank: '選択してください'}, class: 'html-class' %>
+            </td>
+        </tr>
+        <tr>
+            <td><%= f.label :total_revenue %></td>
+            <td><%= f.text_field :total_revenue %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :total_credit_payment %></td>
+            <td><%= f.text_field :total_credit_payment %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :other_spending %></td>
+            <td><%= f.text_field :other_spending %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :total_spending %></td>
+            <td><%= f.text_field :total_spending %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :description %></td>
+            <td><%= f.text_area :description %></td>
+        </tr>
+    </table>
+
     <p>
         <%= f.submit %>
     </p>
-<%= end %>
+<% end %>
